@@ -1,0 +1,77 @@
+[
+  {
+    "id": "your-first-few-minutes",
+    "title": "Your first few minutes",
+    "body": "1. Run `/menu` to open the server menu.\n2. Choose **Random Teleport** to find somewhere to explore, then confirm.\n3. When you find a place for your base, stand in it and run `/p claim` to claim the chunk for yourself.\n4. Run `/p borders` to see the edge of your land.\n5. Open **Homes** in `/menu`, choose **Set a Home**, and save the location.\n6. If a friend should be able to build and use storage on your personal land, run `/p trust PlayerName`.\n\nReplace `PlayerName`, `TeamName`, and other example names with the actual name. Some menu options depend on your rank or permissions."
+  },
+  {
+    "id": "open-the-server-menu",
+    "title": "Open the server menu",
+    "body": "| Platform | How to open it |\n| --- | --- |\n| Java | Press Escape and select **Server Menu**, or type `/menu`. |\n| Bedrock | Type `/menu` or `/servermenu`. |\n\nBedrock uses in-game forms rather than a custom Escape-menu button. If `/menu` opens something else, use `/servermenu`.\n\nThe menu includes **Homes**, **Teleport**, **Random Teleport**, **Teams & Claims**, and **Server Links**. Use Back to return to the previous page. Lists with more entries have Previous and Next buttons."
+  },
+  {
+    "id": "save-and-visit-homes",
+    "title": "Save and visit homes",
+    "body": "Open `/menu` -> **Homes**.\n\n- **Set a Home:** enter a name such as `base`, then confirm. Stay near the spot until you finish confirming.\n- **Visit a home:** select its name, then choose **Teleport**.\n- **Move a saved home:** set a home using the same name and confirm the replacement.\n- **Delete a home:** select it, choose **Delete Home**, and confirm.\n\nHome names can contain letters, numbers, dots, dashes, and underscores, up to 32 characters. Do not use spaces.\n\nYour home limit depends on your rank. A home is a saved teleport location: **setting a home does not claim or protect land**. Deleting a home does not remove your base or claims."
+  },
+  {
+    "id": "teleport-to-friends",
+    "title": "Teleport to friends",
+    "body": "Open `/menu` -> **Teleport**.\n\n| Option | What it does |\n| --- | --- |\n| Request Teleport | Choose an online player to request a teleport to them. |\n| Accept Latest | Accept the most recent incoming teleport request. |\n| Deny Latest | Reject the most recent incoming request. |\n| Auto-Accept TPA: ON/OFF | Toggle automatic acceptance of incoming teleport requests. |\n\nTurn auto-accept **ON** if you want incoming requests accepted without approving each one. Turn it **OFF** when you want to choose who may teleport to you. Reopen the Teleport page to see the updated status. If the option is missing, your rank may not have access.\n\nTeleport delays, cooldowns, costs, and combat restrictions still apply. A menu button does not bypass them."
+  },
+  {
+    "id": "explore-with-random-teleport",
+    "title": "Explore with random teleport",
+    "body": "Choose **Random Teleport** from `/menu`, then **Confirm**. Choose Cancel if you change your mind.\n\nThe server's random-teleport rules determine your destination and any costs or cooldowns. Once you find somewhere you like, claim it and save a home separately."
+  },
+  {
+    "id": "choose-personal-land-or-team-land",
+    "title": "Choose personal land or team land",
+    "body": "| | Personal claims | Team claims |\n| --- | --- | --- |\n| Who owns the land? | You. | Your team. |\n| Who can build and use storage? | You and people you personally trust. | Team members and people trusted by the team leader. |\n| Who can claim? | You. | The leader and members given claiming permission. |\n| Starting allowance | 12 chunks. | 12 chunks per team member. |\n| Claim command | `/p claim` | `/team claim` |\n| Trust command | `/p trust PlayerName` | `/team trust PlayerName` |\n\nYou can have both personal and team claims. Their allowances and trust lists are separate. **Being on the same team does not automatically give someone access to your personal land.**\n\nA chunk is a 16-by-16-block area. Claim and unclaim commands act on the chunk you are standing in."
+  },
+  {
+    "id": "protect-your-own-base",
+    "title": "Protect your own base",
+    "body": "| Command | What it does |\n| --- | --- |\n| `/p claim` | Claim the current chunk for yourself. |\n| `/p unclaim` | Remove your personal claim from the current chunk. |\n| `/p info` | Check your personal claim allowance and usage. |\n| `/p menu` | See your explicitly trusted players. |\n| `/p trust PlayerName` | Give someone building and storage access to your personal claims. |\n| `/p untrust PlayerName` | Remove their personal-claim access. |\n| `/p borders` | Show or hide your outer territory boundary. |\n\n`/p gui` and `/p trusted` also open the personal trust list.\n\nPersonal trust applies across **all of your personal claims**, not only the chunk you are standing in. Trust lets someone build as well as open storage, so choose carefully. The player must have joined the server before their name can be found for personal trust.\n\nYour personal claims remain yours if you leave a team or are kicked from one."
+  },
+  {
+    "id": "create-or-join-a-team",
+    "title": "Create or join a team",
+    "body": "To create a team, choose a name, short tag, and color. For example:\n\n```text\n/team create Rams RAM white\n```\n\nUse tab completion to see supported colors and icons. Team names can be up to 20 characters, and tags up to 8.\n\nTo invite a friend, the leader runs:\n\n```text\n/team invite PlayerName\n```\n\nThe friend joins with:\n\n```text\n/team join Rams\n```\n\nYou can also use `/team join TeamName` to request entry when you have not been invited. The leader accepts or denies the request.\n\n| Command | What it does |\n| --- | --- |\n| `/team list` | Browse teams. |\n| `/team info` | Read information about your team. |\n| `/team info TeamName` | Read information about a named team. |\n| `/team decline TeamName` | Decline an invitation. |\n| `/team leave` | Leave your team. |\n\nYou can use `/t` instead of `/team`."
+  },
+  {
+    "id": "manage-a-team",
+    "title": "Manage a team",
+    "body": "The leader can open `/t menu` or `/team menu`. The older `/t gui` and `/team gui` commands still work.\n\n| Leader command | What it does |\n| --- | --- |\n| `/team accept PlayerName` | Accept a join request. |\n| `/team deny PlayerName` | Deny a join request. |\n| `/team kick PlayerName` | Remove a member, including an offline member. |\n| `/team leader PlayerName` | Transfer leadership to a team member. |\n| `/team rename NewName` | Change the team name. |\n| `/team tag NewTag` | Change the short tag. |\n| `/team color ColorName` | Change the team color. |\n| `/team icon IconName` | Change the team icon. |\n\nKicking a player removes their membership and delegated claiming permission. It does not remove their personal land.\n\n### Team land and trust\n\nStand in a chunk and use `/team claim` to claim it for the team. Use `/team unclaim` to remove a claim, subject to the team's permissions.\n\nTeam members can build and use storage on team land automatically. The leader can grant claiming permission separately:\n\n```text\n/team claimperm PlayerName grant\n/team claimperm PlayerName revoke\n```\n\nTo give an outsider access to team land:\n\n```text\n/team trust PlayerName\n/team untrust PlayerName\n```\n\n`/trust PlayerName` and `/untrust PlayerName` are team-trust shortcuts. Use `/team trusted` to see the explicit trust list. Team trust applies across all of the team's claims.\n\n**Build access, claiming permission, and leadership are different.** Trusting someone does not make them a leader or give them permission to claim."
+  },
+  {
+    "id": "expand-your-territory",
+    "title": "Expand your territory",
+    "body": "| Purchase | Team command | Personal command | Cost |\n| --- | --- | --- | --- |\n| One extra chunk slot | `/team buyclaim` | `/p buyclaim` | 10 diamonds |\n| One extra detached-territory anchor | `/team buyanchor` | `/p buyanchor` | 64 diamonds |\n\nCarry the diamonds in your inventory. Buying a slot increases your allowance; afterward, stand where you want land and use the claim command.\n\nYour first anchor is free. Normally, new claims connect to your existing land. Buy another anchor if you want to start a separate territory elsewhere. Unclaiming does not refund your diamonds.\n\nNew claims must respect the 20-chunk spacing rule around unallied teams and unrelated personal land. Existing claims and protected server regions cannot be claimed over."
+  },
+  {
+    "id": "ally-another-team",
+    "title": "Ally another team",
+    "body": "An alliance lets friendly teams claim near one another without the usual spacing restriction between them.\n\nBoth leaders must agree. For example:\n\n```text\nAlpha's leader: /team ally Beta\nBeta's leader: /team ally Alpha\n```\n\nUse `/team ally` to view allies, or `/team unally TeamName` to end an alliance or remove a pending request. Allies also appear in team information.\n\nAlliances do **not** give automatic access to buildings, storage, or claim controls. Use trust when someone should have access. Spacing restrictions still apply to unrelated teams. Your own team and its accepted allies also receive the relevant spacing exceptions around personal territories.\n\nEnding an alliance does not remove existing claims."
+  },
+  {
+    "id": "storage-and-farms",
+    "title": "Storage and farms",
+    "body": "Chests, barrels, and other storage inside a claim use that claim's membership and trust rules. There are no separate chest locks to manage.\n\n- On team land, team members and team-trusted players can use storage.\n- On personal land, only the owner and personally trusted players can use storage.\n- Untrusted outsiders cannot open claimed storage. Wilderness storage is not protected by a claim.\n- Hoppers, hopper minecarts, and automatic composters can transfer items within the same claim owner. Transfers across claim-owner boundaries or between claimed land and wilderness are blocked.\n- Water and lava can flow within your territory. Flow from outside needs a recorded source placed by someone with build access to the destination claim.\n- You can sort your own inventory while visiting other people's land. Access to their storage is separate.\n\nIf a farm stops at a border, check that its storage and transfer path belong to the same claim owner."
+  },
+  {
+    "id": "see-boundaries-and-control-explosions",
+    "title": "See boundaries and control explosions",
+    "body": "| Command | What it shows |\n| --- | --- |\n| `/team borders` | The outer boundary of your team's land. |\n| `/p borders` | The outer boundary of your personal land. |\n| `/team tntborders` | Red outlines around explosion-enabled team chunks. |\n| `/p tntborders` | Red outlines around explosion-enabled personal chunks. |\n\nRun a command again to hide that view. Normal territory borders and red explosion borders can be shown independently. Stand near your claims and make sure particles are visible in your client settings.\n\nExplosion block damage is blocked in claims by default. A team leader or personal owner can change a specific chunk while standing inside it:\n\n```text\n/team explosions status\n/team explosions on\n/team explosions off\n```\n\nFor personal claims, use `/p explosions status`, `/p explosions on`, or `/p explosions off`.\n\n**Turning explosions on allows block damage from all explosion sources in that chunk, including outsiders' TNT, creepers, beds, and anchors.** It is not limited to explosives placed by you. Storage can also be damaged. Keep explosions off around builds you want protected.\n\nThese settings control block damage; they do not promise protection from combat or explosion damage to players."
+  },
+  {
+    "id": "read-your-team-and-personal-information",
+    "title": "Read your team and personal information",
+    "body": "Open `/menu` -> **Teams & Claims** -> **My Team** to see your team, leader, members, allies, claiming permission, and land usage.\n\nChoose **Personal Claims** -> **Personal Info** for your personal allowance, anchors, and trusted-player count. Use Next, Previous, and Refresh as needed.\n\nThe personal `/p menu` is the trusted-player list. Use **Personal Info** in ServerMenu or `/p info` when you want claim totals."
+  },
+  {
+    "id": "common-questions",
+    "title": "Common questions",
+    "body": "### Why can't my teammate build in my claim?\n\nCheck whether it is personal land. Teammates need `/p trust PlayerName` for personal claims. Team membership automatically covers team land only.\n\n### Why can I build but not claim for my team?\n\nOnly the leader can claim by default. Ask the leader to use `/team claimperm YourName grant`.\n\n### Why can't an ally open my chest?\n\nAn alliance affects claim spacing, not storage access. The relevant owner or leader must grant trust.\n\n### Why does the trust list not show every teammate?\n\nIt shows explicit trust entries. Team members already have automatic team-land access.\n\n### Why does my claim fail?\n\nCheck your remaining slots, nearby claims, protected regions, and whether the new chunk connects to existing land. A separate territory may need another anchor.\n\n### Why does `/ec` fail in someone else's land?\n\nEnder-chest storage opened through commands requires access to the territory you are standing in. Physical ender-chest use may also be disabled by server rules.\n\n### Where can I get help?\n\nOpen **Server Links** in `/menu` or join the [RAMSMP Discord](https://discord.gg/QnVP7y9dRD). Tell staff which command you used and include the exact message you received."
+  }
+]
