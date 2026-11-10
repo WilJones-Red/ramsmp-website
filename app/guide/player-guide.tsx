@@ -1,5 +1,6 @@
 "use client";
 
+import { sitePath } from "../../lib/site-path";
 import { Fragment, useState, type ReactNode } from "react";
 import { ArrowLeft, ArrowUpRight, BookOpen, Search, X } from "lucide-react";
 import sections from "./sections.json";
@@ -60,13 +61,13 @@ export default function PlayerGuide() {
   const matches = sections.filter(section => terms.every(term => `${section.title} ${section.body}`.toLowerCase().includes(term)));
   return <>
     <a className="skip" href="#guide-content">Skip to guide content</a>
-    <header className="guide-header"><a className="brand" href="/"><img src="/assets/logo.png" alt=""/>RAM<span>SMP</span></a><a className="text-link" href="/#player-guide"><ArrowLeft size={16}/>Back to the server</a><a className="button small" href="/#join">Join RAMSMP <ArrowUpRight size={16}/></a></header>
+    <header className="guide-header"><a className="brand" href={sitePath("/")}><img src={sitePath("/assets/logo.png")} alt=""/>RAM<span>SMP</span></a><a className="text-link" href={sitePath("/#player-guide")}><ArrowLeft size={16}/>Back to the server</a><a className="button small" href={sitePath("/#join")}>Join RAMSMP <ArrowUpRight size={16}/></a></header>
     <main className="guide-page">
-      <div className="guide-title"><p className="eyebrow"><BookOpen size={15}/> YOUR RAMSMP FIELD GUIDE</p><h1>Less guessing.<br/><em>More playing.</em></h1><p>Find a place to build, protect your base, and team up with friends.<br/>Most everyday features are available through <code>/menu</code>.</p><a className="text-link" href="/RAMSMP-PLAYER-GUIDE.md" download>Download the full guide (.md) <ArrowUpRight size={15}/></a></div>
+      <div className="guide-title"><p className="eyebrow"><BookOpen size={15}/> YOUR RAMSMP FIELD GUIDE</p><h1>Less guessing.<br/><em>More playing.</em></h1><p>Find a place to build, protect your base, and team up with friends.<br/>Most everyday features are available through <code>/menu</code>.</p><a className="text-link" href={sitePath("/RAMSMP-PLAYER-GUIDE.md")} download>Download the full guide (.md) <ArrowUpRight size={15}/></a></div>
       <div className="guide-search"><Search size={20}/><label className="sr-only" htmlFor="guide-search">Search the player guide</label><input id="guide-search" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Search commands or topics: homes, trust, explosions…"/>{query && <button onClick={() => setQuery("")} aria-label="Clear search"><X size={18}/></button>}</div>
       <div className="guide-layout"><aside className="guide-sidebar"><p className="eyebrow">IN THIS GUIDE</p><nav aria-label="Guide chapters">{matches.map(section => <a key={section.id} href={`#${section.id}`}>{section.title}</a>)}</nav><p role="status">{matches.length} of {sections.length} topics</p><a className="text-link" href="https://discord.gg/QnVP7y9dRD" target="_blank" rel="noreferrer">Need help? Ask in Discord <ArrowUpRight size={14}/></a></aside>
         <div id="guide-content" className="guide-articles">{matches.length ? matches.map(section => <article className="guide-article rainbow-panel" id={section.id} key={section.id}><h2>{section.title}</h2><Markdown text={section.body}/></article>) : <div className="guide-empty"><h2>No matching topics.</h2><p>Try a command such as /p claim, or a shorter term like homes or trust.</p><button className="button" onClick={() => setQuery("")}>Show all topics</button></div>}</div>
       </div>
-    </main><footer><a href="/">← Back to RAMSMP</a><p>Player instructions from the RAMSMP Player Guide.</p><a href="#">Back to top ↑</a></footer>
+    </main><footer><a href={sitePath("/")}>← Back to RAMSMP</a><p>Player instructions from the RAMSMP Player Guide.</p><a href="#">Back to top ↑</a></footer>
   </>;
 }

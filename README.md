@@ -1,6 +1,6 @@
 # RAMSMP website
 
-A responsive Minecraft community website with joining information, a noticeboard, showcases, staff heads, FAQs, and a searchable player handbook. Built with React, TypeScript, and Vinext/Vite.
+A responsive Minecraft community website with joining information, a noticeboard, showcases, staff heads, FAQs, and a searchable player handbook. Built with React and TypeScript, exported to plain HTML, CSS, and JavaScript. No application server, database, or Cloudflare Worker runs in production.
 
 ## Local development
 
@@ -18,7 +18,15 @@ npm run build
 npx tsc --noEmit
 ```
 
-The build produces a Cloudflare Worker and client assets in `dist`. `dist/client` alone is not a standalone static website. GitHub stores this source; pushing it does not publish a live website.
+The build creates a complete static site in `out/`, including `index.html` and `guide/index.html`. Upload the contents of that folder to any static host. Node is needed only for development/building, not by the live site. `npm start` previews the exported files locally.
+
+## GitHub Pages
+
+`.github/workflows/pages.yml` builds and deploys `out/` whenever `main` changes. GitHub Pages must use **GitHub Actions** as its publishing source. The existing custom domain is preserved in `CNAME`: **www.ramsmp.net**.
+
+The workflow reads the base path from GitHub Pages, so links and images work with both the custom domain and a repository URL. For a manual repository-path build, set `NEXT_PUBLIC_BASE_PATH=/ramsmp-website` before `npm run build` and `npm start`. Leave it empty for the custom domain.
+
+After every build, `scripts/check-static.mjs` checks the exported HTML and local asset/link targets. Copy buttons, edition switching, the screenshot viewer, and guide search run entirely in the visitor's browser.
 
 ## Editing content
 
@@ -40,4 +48,4 @@ The seven usernames were resolved through Mojang. Heads were rendered by [MCHead
 
 Updates and showcases are maintained in source. There is no CMS/admin dashboard, player-submission form, or live server-status integration. This repository contains website files only, not Minecraft plugins or server data. No live Minecraft connection testing is implied by website checks.
 
-Sites hosting has not been configured; `.openai/hosting.json` has no project ID. Configure an appropriate hosting target separately when ready to publish.
+The original Sites/Vinext starter support files are unused by the static build. Publishing uses GitHub Pages; no Sites or Cloudflare account is required.

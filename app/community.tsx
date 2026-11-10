@@ -1,3 +1,4 @@
+import { sitePath } from "../lib/site-path";
 import { ArrowUpRight, BookOpen, Compass, House, ShieldCheck, Users } from "lucide-react";
 
 export const staff = [
@@ -13,7 +14,7 @@ export function StaffSection() {
     </div>
     <div className="staff-grid">
       {staff.map(name => <article className="staff-card rainbow-panel" key={name}>
-        <div className="staff-head"><img src={`/assets/staff/${name}.png`} alt={`${name}'s Minecraft character head`} width={160} height={160} loading="lazy" /></div>
+        <div className="staff-head"><img src={sitePath(`/assets/staff/${name}.png`)} alt={`${name}'s Minecraft character head`} width={160} height={160} loading="lazy" /></div>
         <h3>{name}</h3><p>MAIN STAFF</p>
       </article>)}
     </div>
@@ -31,7 +32,7 @@ export function PlayerGuideSection() {
     ["Let a friend build", "Use /p trust PlayerName to share your personal land."],
   ];
   return <section id="player-guide" className="section player-guide-section">
-    <div className="section-heading"><div><p className="eyebrow">FROM FIRST JOIN TO FIRST BASE</p><h2>Make the world yours.</h2></div><a className="button" href="/guide">Open the player guide <ArrowUpRight size={17}/></a></div>
+    <div className="section-heading"><div><p className="eyebrow">FROM FIRST JOIN TO FIRST BASE</p><h2>Make the world yours.</h2></div><a className="button" href={sitePath("/guide/")}>Open the player guide <ArrowUpRight size={17}/></a></div>
     <p className="guide-intro">Homes, teleports, teams, and protected land. Start with these six steps, then explore the full guide whenever you need a command.</p>
     <div className="quickstart-grid">{steps.map(([title, body], index) => <article key={title} className="quickstart-card rainbow-panel"><span className="step-number">0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
     <div className="guide-note"><ShieldCheck size={22}/><p><strong>A home saves a location. A claim protects land.</strong> Team membership gives access to team land only. Personal land uses its own trust list.</p></div>
@@ -41,6 +42,6 @@ export function PlayerGuideSection() {
       { Icon: Users, label: "Teams & trust", id: "manage-a-team" },
       { Icon: Compass, label: "Territory & alliances", id: "expand-your-territory" },
       { Icon: BookOpen, label: "Common questions", id: "common-questions" },
-    ].map(({Icon, label, id}) => <a key={id} href={`/guide#${id}`}><Icon size={18}/>{label}<ArrowUpRight size={14}/></a>)}</div>
+    ].map(({Icon, label, id}) => <a key={id} href={sitePath(`/guide/#${id}`)}><Icon size={18}/>{label}<ArrowUpRight size={14}/></a>)}</div>
   </section>;
 }
