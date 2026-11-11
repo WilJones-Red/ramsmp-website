@@ -1,2 +1,2 @@
-// Add real server announcements here. Each entry becomes a noticeboard post.
-export const updates = [{ category: 'SERVER GUIDE', title: 'Your way into RAMSMP.', body: 'Java or Bedrock? Find your server address, connection steps, and the Europe address in one place.', href: '#join', linkLabel: 'Get connected' }];
+// Add real server announcements here.
+export const updates = [{ category: 'START HERE', title: 'Let’s play!', body: 'Grab the IP and hop in.', href: '#join', linkLabel: 'Get the IP' }];

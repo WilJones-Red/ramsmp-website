@@ -9,8 +9,8 @@ export const staff = [
 export function StaffSection() {
   return <section id="staff" className="section staff-section">
     <div className="section-heading">
-      <div><p className="eyebrow">THE PEOPLE BEHIND THE SERVER</p><h2>Meet the main staff.</h2></div>
-      <p>A few familiar faces to look out for.</p>
+      <div><h2>Meet the staff.</h2></div>
+
     </div>
     <div className="staff-grid">
       {staff.map(name => <article className="staff-card rainbow-panel" key={name}>
@@ -18,24 +18,24 @@ export function StaffSection() {
         <h3>{name}</h3><p>MAIN STAFF</p>
       </article>)}
     </div>
-    <div className="staff-footer"><p>Need a hand? Include the command you used and the exact message you received.</p><a className="text-link" href="https://discord.gg/QnVP7y9dRD" target="_blank" rel="noreferrer">Ask in Discord <ArrowUpRight size={16}/></a></div>
+    <div className="staff-footer"><p>Stuck? Ask us!</p><a className="text-link" href="https://discord.gg/QnVP7y9dRD" target="_blank" rel="noreferrer">Ask in Discord <ArrowUpRight size={16}/></a></div>
   </section>;
 }
 
 export function PlayerGuideSection() {
   const steps = [
-    ["Open your menu", "Type /menu. On Bedrock, /servermenu works too."],
-    ["Find your own spot", "Choose Random Teleport, then confirm to explore."],
-    ["Claim your base", "Stand in your chosen chunk and run /p claim."],
-    ["Check the boundary", "Run /p borders to see the edge of your land."],
-    ["Save the way home", "Open Homes → Set a Home in /menu and confirm."],
-    ["Let a friend build", "Use /p trust PlayerName to share your personal land."],
+    ["Open your menu", "Type /menu (or /servermenu on Bedrock)."],
+    ["Find your own spot", "Pick Random Teleport and confirm."],
+    ["Claim your base", "Type /p claim where you want to build."],
+    ["Check the boundary", "Type /p borders to see your land."],
+    ["Save the way home", "In /menu, pick Homes → Set a Home. Confirm."],
+    ["Let a friend build", "Type /p trust PlayerName. Only trust friends!"],
   ];
   return <section id="player-guide" className="section player-guide-section">
-    <div className="section-heading"><div><p className="eyebrow">FROM FIRST JOIN TO FIRST BASE</p><h2>Make the world yours.</h2></div><a className="button" href={sitePath("/guide/")}>Open the player guide <ArrowUpRight size={17}/></a></div>
-    <p className="guide-intro">Homes, teleports, teams, and protected land. Start with these six steps, then explore the full guide whenever you need a command.</p>
+    <div className="section-heading"><div><p className="eyebrow">GET STARTED</p><h2>Your first base.</h2></div><a className="button" href={sitePath("/guide/")}>All commands <ArrowUpRight size={17}/></a></div>
+    <p className="guide-intro">Six quick steps. Then go build!</p>
     <div className="quickstart-grid">{steps.map(([title, body], index) => <article key={title} className="quickstart-card rainbow-panel"><span className="step-number">0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
-    <div className="guide-note"><ShieldCheck size={22}/><p><strong>A home saves a location. A claim protects land.</strong> Team membership gives access to team land only. Personal land uses its own trust list.</p></div>
+    <div className="guide-note"><ShieldCheck size={22}/><p><strong>Set a home to get back. Claim to protect.</strong>  Teammates can build on team land. Your own land needs /p trust.</p></div>
     <div className="guide-topics">{[
       { Icon: House, label: "Homes & travel", id: "save-and-visit-homes" },
       { Icon: ShieldCheck, label: "Personal claims", id: "protect-your-own-base" },
