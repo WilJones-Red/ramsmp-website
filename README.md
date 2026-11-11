@@ -42,7 +42,7 @@ Guide content comes from the supplied RAMSMP player document. Personal claims, t
 
 ## Staff images
 
-The seven usernames were resolved through Mojang. Heads were rendered by [MCHeads](https://mc-heads.net/) using each current texture ID, then saved locally so visiting the page does not require the head service. Source UUIDs and texture IDs are in `public/assets/staff/profiles.json` (checked November 10, 2026). These are snapshots and do not automatically follow future skin changes.
+The staff usernames were resolved through Mojang. Heads were rendered by [MCHeads](https://mc-heads.net/) using each current texture ID, then saved locally so visiting the page does not require the head service. Source UUIDs and texture IDs are in `public/assets/staff/profiles.json` (checked November 10, 2026). These are snapshots and do not automatically follow future skin changes.
 
 ## Scope
 

@@ -3,7 +3,7 @@ import { ArrowUpRight, BookOpen, Compass, House, ShieldCheck, Users } from "luci
 
 export const staff = [
   "PrimoSlice", "randomperson1194", "Luigi282", "BigLeader857614",
-  "Monopolizer500", "Rambion", "VannyJo",
+  "Monopolizer500", "Rambion", "VannyJo", "notnixois",
 ];
 
 export function StaffSection() {
